@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="author" content="Omar Santiago">
+    <meta name="description" content="introduccion a Perl template">
+    <meta name="keywords" content="passwd html security perl template.tmpl">
+    <meta charset="utf-8" />
+    <title>homework3_</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h3>Archivo passwd</h3>
+            <p>Plantilla en Perl</p>
+            <p>Omar Santiago López</p>
+        </header>
+        <section>
+            <div id="menu">
+                <p class="item_list">user</p>
+                <p class="item_list">pass</p>
+                <p class="item_list">uid</p>
+                <p class="item_list">gid</p>
+                <p class="item_list">geos</p>
+                <p class="item_list">home</p>
+                <p class="item_list">shell</p>
+                <p class="item_list">action</p>
+            </div>
+            <tmpl_loop name=interfaces>
+                <form>
+                    <input type="text" class="item_list" name="_user" value="<tmpl_var name=user>" />
+                    <input type="text" class="item_list" name="_pass" value="<tmpl_var name=pass>" />
+                    <input type="text" class="item_list" name="_uid" value="<tmpl_var name=uid>" />
+                    <input type="text" class="item_list" name="_dig" value="<tmpl_var name=gid>" />
+                    <input type="text" class="item_list" name="_geos" value="<tmpl_var name=geos>" />
+                    <input type="text" class="item_list" name="_home" value="<tmpl_var name=home>" />
+                    <input type="text" class="item_list" name="_shell" value="<tmpl_var name=shell>" />
+                    <input type="button" class="item_list" id="submit" value="go" name="_submit" />
+                    </br>
+                </form>
+            </tmpl_loop>
+        </section>
+        <footer>
+            <p>Date: 2017-february-09</p>
+        </footer>
+    </main>
+</body>
+    <style>
+        *{ box-sizing: border-box; }
+        main{ margin:0 auto; max-width: 1200px; }
+        header{ text-align: center; padding: 15px 10px;}
+        header h3{ margin:0; padding: 5px 10px; font-size: 20px; }
+        header p{
+            font-size: 18px;
+            padding: 5px 10px;
+            margin:0;
+            font-style: italic;
+        }
+        section{
+            padding: 5px 10px;
+            text-align: center;
+            border:1px solid #01579B;
+        }
+        section #menu{ background-color: #9E9E9E; }
+        section #menu p{
+            border:none !important;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: text !important;
+            color:white;
+        }
+        section .item_list{
+            display: inline-block;
+            width: 12%;
+            margin: 5px 0;
+            padding: 5px 1px;
+            border:1px solid;
+            outline: none;
+            text-align: center;
+            cursor: pointer;
+            color:#616161;
+        }
+        section input[type=text]:hover{ color: #0277BD; border: 1px solid #0277BD; }
+        section #submit:hover{ transition-duration: 1s; background-color: #0277BD; color:white; }
+        footer{ padding: 5px 10px; }
+    </style>
+</html>
+
+
+
